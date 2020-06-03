@@ -1,0 +1,22 @@
+ul{
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+    /* margin-top: 25px; */
+}
+ul .active{
+    border-left: 4px solid red;
+    transition: 0s;
+}
+ul .menu-selection{
+    background-color: #FFF;
+    padding: 10px 25px;
+    cursor: pointer;
+    border-bottom: 1px solid#000;
+    transition: 0.2s all;
+    font-family: 'Montserrat-Regular';
+    color: #38023B;
+}
+ul .menu-selection:hover{
+    background-color: #f6f8fa;
+}

@@ -1,0 +1,9 @@
+body{
+    background-color: #BBD5ED;
+}
+.content-container{
+    display: flex;
+    width: 90%;
+    margin: 0 auto;
+    justify-content: space-between;
+}
