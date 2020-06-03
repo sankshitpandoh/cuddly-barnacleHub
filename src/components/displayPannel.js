@@ -3,7 +3,10 @@ import '../stylesheets/displayPannel.css';
 
 
 function DisplayPannel(props){
-    console.log(props.data.total_count)
+    /* Read how to add pagination as items length != total_count */
+    console.log(props.data.items.length)
+    let totalCount = props.data.total_count
+    console.log(totalCount)
         return(
             <div className="displayPannel">
                 <div className="container">

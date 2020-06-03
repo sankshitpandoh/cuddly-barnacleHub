@@ -1,4 +1,6 @@
 .displayPannel{
     width: 72%;
     background-color: white;
+    height: 80vh;
+    overflow-y: auto;
 }
