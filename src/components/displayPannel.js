@@ -5,12 +5,24 @@ import '../stylesheets/displayPannel.css';
 function DisplayPannel(props){
     /* Read how to add pagination as items length != total_count */
     console.log(props.data.items.length)
-    let totalCount = props.data.total_count
-    console.log(totalCount)
+    const resultItems = props.data.items.map((x,index) => 
+    {
+        return <div
+            className = "single-result-item"
+            key={index}>
+            <figure>
+                <img src={x.avatar_url} alt ="display-avatar" />
+            </figure>
+            <h3 onClick={() => props.showUser(x)}>
+                {x.login}
+            </h3>
+        </div>
+    }   
+);
         return(
             <div className="displayPannel">
                 <div className="container">
-                    <h3> UserName :</h3>
+                    {resultItems}
                 </div>
             </div>
         )

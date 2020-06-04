@@ -1,6 +1,17 @@
 .displayPannel{
     width: 72%;
     background-color: white;
-    height: 80vh;
+    height: 91vh;
     overflow-y: auto;
+}
+.displayPannel .single-result-item{
+    background-color: red;
+    margin: 10px;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+}
+.displayPannel .single-result-item figure{
+    height: 50px;
+    width: 50px;
 }

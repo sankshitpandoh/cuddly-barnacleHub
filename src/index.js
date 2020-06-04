@@ -6,6 +6,7 @@ import './stylesheets/index.css';
 import Header from './components/header';
 import LeftPanel from './components/leftPanel';
 import DisplayPannel from './components/displayPannel';
+import UserProfile from './components/userProfile';
 
 const API = "https://api.github.com/";
 const searchQueries = ["search/users?q=" , "search/repositories?q="]
@@ -17,6 +18,8 @@ class App extends React.Component{
         searchParameter : searchQueries[0] ,
         data : "",
         activeOption : 0,
+        openUser : false,
+        currentUser : ""
     }
 
     handleChangeSearch = (e) => {
@@ -28,7 +31,7 @@ class App extends React.Component{
     handleCategory = (x) => {
         this.setState({ 
             activeOption : x,
-            searchParameter : searchQueries[x]
+            searchParameter : searchQueries[x],
         }, () => { this.fetchSearch() })
         // console.log(x)
     }
@@ -37,6 +40,8 @@ class App extends React.Component{
         this.setState({
             value : this.state.searchInput,
             searchParameter : searchQueries[0],
+            openUser : false,
+            currentUser : "",
             activeOption : 0
         }, () => { this.fetchSearch()})
     }
@@ -58,16 +63,27 @@ class App extends React.Component{
         })
     }
 
+    showUser = (x) => {
+        this.setState({
+            openUser : true,
+            currentUser: x
+        })
+    }
     render(){
         return(
             <>
             <Header state={this.state} search = {this.search} handleChangeSearch = {this.handleChangeSearch} />
-            <div className = "content-container">
+            {!this.state.openUser ?
+                <div className = "content-container">
             <LeftPanel active = {this.state.activeOption} handleCategory = {this.handleCategory}/>
             {this.state.data !== "" &&
-                <DisplayPannel data = {this.state.data} />
+                <DisplayPannel data = {this.state.data} showUser = {this.showUser} />
+                
             }
             </div>
+            :
+            <UserProfile data={this.state.currentUser} />
+            }
             </>
         )
     }
