@@ -92,10 +92,9 @@ class App extends React.Component{
                 :
                 !this.state.openUser ?
                 <div className = "content-container">
-            <LeftPanel active = {this.state.activeOption} handleCategory = {this.handleCategory}/>
-            {this.state.data !== "" &&
-                <DisplayPannel data = {this.state.data} showUser = {this.showUser} />
-                
+                    <LeftPanel active = {this.state.activeOption} handleCategory = {this.handleCategory}/>
+                        {this.state.data !== "" &&
+                            <DisplayPannel data = {this.state.data} showUser = {this.showUser} />
             }
             </div>
             :
