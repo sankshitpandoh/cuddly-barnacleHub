@@ -4,6 +4,11 @@
     height: 91vh;
     overflow-y: auto;
 }
+.displayPannel .container{
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+}
 .displayPannel .single-result-item{
     background-color: red;
     margin: 10px;

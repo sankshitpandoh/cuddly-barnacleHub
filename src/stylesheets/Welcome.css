@@ -1,0 +1,44 @@
+.welcome-container{
+    width: 90%;
+    margin: 0 auto;
+    padding: 25px 0;
+}
+.welcome-container h3{
+    font-size: 35px;
+    font-family: 'Montserrat-Regular';
+}
+.welcome-container h1{
+    font-size: 100px;
+    font-family: 'Montserrat-Bold';
+}
+.welcome-container p{
+    font-size: 25px;
+    font-family: 'Montserrat-Light';
+}
+.welcome-container footer{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #000;
+    padding: 5px 0;
+}
+.welcome-container footer span{
+    font-family: 'Montserrat-Light';
+    color: #fff;
+}
+.welcome-container footer span a{
+    font-family: 'Montserrat-Bold';
+    color: #fff;
+    transition: 0.5s all;
+    opacity: 0.75;
+}
+.welcome-container footer span a:hover{
+    font-family: 'Montserrat-Bold';
+    text-decoration: underline;
+    opacity: 1;
+}

@@ -22,6 +22,24 @@
     font-weight: 200;
     margin-bottom: 25px;
 }
+.leftUserPanel button{
+    background-color:#eff3f6;
+    background-image: linear-gradient(-180deg,#fafbfc,#eff3f6 90%);
+    cursor: pointer;
+    border-radius: 3px;
+    border: 1px solid rgba(27,31,35,.2);
+    margin-bottom: 15px;
+    padding: 6px 12px;
+}
+.leftUserPanel button:hover{
+    background-image: linear-gradient(-180deg,#f0f3f6,#e6ebf1 90%);
+    border-color: rgba(27,31,35,.35);
+}
+.leftUserPanel button a{
+    color: #24292e;
+    font-family: 'Montserrat-Light';
+    font-weight: bold;
+}
 .leftUserPanel .statusContainer p{
     /* font-family: 'Montserrat-Light'; */
     font-family: 'OpenSans';
@@ -29,16 +47,26 @@
     color: #000;
     word-wrap: break-word;
     text-align: left;
+    margin-bottom: 15px;
+}
+.leftUserPanel .octicon{
+    margin-right: 5px;
+    color: #6a737d;
 }
 .leftUserPanel .organisation{
     font-family: 'OpenSans';
-    font-size: 14px;
+    font-size: 12px;
+    margin-bottom: 5px;
 }
 .leftUserPanel .location{
     font-family: 'OpenSans';
-    font-size: 14px;
+    font-size: 12px;
+    margin-bottom: 5px;
 }
 .leftUserPanel .blog{
     font-family: 'OpenSans';
-    font-size: 14px;
+    font-size: 12px;
+}
+.leftUserPanel .blog a:hover{
+    text-decoration: underline;
 }

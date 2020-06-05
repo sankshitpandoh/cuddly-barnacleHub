@@ -4,6 +4,7 @@ import './stylesheets/reset.css';
 import './stylesheets/font-face.css'
 import './stylesheets/index.css';
 import Header from './components/header';
+import Welcome from './components/Welcome';
 import LeftPanel from './components/leftPanel';
 import DisplayPannel from './components/displayPannel';
 import UserProfile from './components/userProfile';
@@ -13,6 +14,7 @@ const searchQueries = ["search/users?q=" , "search/repositories?q="]
 
 class App extends React.Component{
     state = {
+        onHome : true,
         searchInput : "",
         value : "",
         searchParameter : searchQueries[0] ,
@@ -20,6 +22,12 @@ class App extends React.Component{
         activeOption : 0,
         openUser : false,
         currentUser : ""
+    }
+
+    backHome = () =>{
+        this.setState({
+            onHome : true
+        })
     }
 
     handleChangeSearch = (e) => {
@@ -42,7 +50,8 @@ class App extends React.Component{
             searchParameter : searchQueries[0],
             openUser : false,
             currentUser : "",
-            activeOption : 0
+            activeOption : 0,
+            onHome: false
         }, () => { this.fetchSearch()})
     }
 
@@ -77,8 +86,11 @@ class App extends React.Component{
     render(){
         return(
             <>
-            <Header state={this.state} search = {this.search} handleChangeSearch = {this.handleChangeSearch} />
-            {!this.state.openUser ?
+            <Header state={this.state} search = {this.search} handleChangeSearch = {this.handleChangeSearch} backHome={this.backHome} />
+                {this.state.onHome ?
+                <Welcome />
+                :
+                !this.state.openUser ?
                 <div className = "content-container">
             <LeftPanel active = {this.state.activeOption} handleCategory = {this.handleCategory}/>
             {this.state.data !== "" &&
@@ -89,6 +101,7 @@ class App extends React.Component{
             :
             <UserProfile data={this.state.currentUser} />
             }
+
             </>
         )
     }

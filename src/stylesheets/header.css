@@ -19,6 +19,7 @@
     height: 25px;
     padding: 5px;
     color: #CEFDFF;
+    font-family: 'OpenSans';
 }
 .header-container .container span div{
     background-color: #404448;
@@ -43,4 +44,5 @@
     color: #CEFDFF;
     font-size: 30px;
     font-family: 'Montserrat-Bold';
+    cursor: pointer;
 }

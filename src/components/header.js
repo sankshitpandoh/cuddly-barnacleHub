@@ -10,7 +10,7 @@ class Header extends React.Component{
                         <input type="text" placeholder="Search here" value={this.props.searchInput} onChange={this.props.handleChangeSearch}/>
                         <div onClick={this.props.search}> Search </div>
                     </span>
-                    <h3>Barnacle Hub</h3>       
+                    <h3 onClick={this.props.backHome}>Barnacle Hub</h3>       
                 </div>
             </div>
         )
