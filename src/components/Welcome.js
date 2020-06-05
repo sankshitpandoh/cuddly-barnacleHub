@@ -8,7 +8,7 @@ function Welcome(){
             <h1>Barnacle Hub</h1>
             <p>A GitHub Browsing platform made using React</p>
             <footer>
-                <span>Made with love by : <a href="">Sankshit Pandoh</a></span>
+                <span>Made with love by : <a href="https://github.com/sankshitpandoh">Sankshit Pandoh</a></span>
             </footer>
         </div>
     )

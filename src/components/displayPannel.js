@@ -4,7 +4,6 @@ import '../stylesheets/displayPannel.css';
 
 function DisplayPannel(props){
     /* Read how to add pagination as items length != total_count */
-    console.log(props.data.items.length)
     const resultItems = props.data.items.map((x,index) => 
     {
         return <div
