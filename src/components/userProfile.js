@@ -1,10 +1,14 @@
 import React from 'react';
+import '../stylesheets/userProfile.css';
+import LeftUserPanel from './leftUserPanel';
 
 class UserProfile extends React.Component{
     render(){
         return(
             <>
-            <h1>{this.props.data.login}</h1>
+                <div className="container">
+                    <LeftUserPanel data = {this.props.data} />
+                </div>
             </>
         )
     }

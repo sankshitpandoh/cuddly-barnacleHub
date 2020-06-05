@@ -1,6 +1,5 @@
 .header-container{
-    background-color: #38023B;
-    border-bottom: 2px solid #CCFFCB;
+    background-color: #24292E;
 }
 .header-container .container{
     width: 90%;
@@ -22,24 +21,23 @@
     color: #CEFDFF;
 }
 .header-container .container span div{
-    background-color: #CCFFCB;
+    background-color: #404448;
     border: 0;
-    border: 1px solid #CCFFCB;
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 5px 15px;
     height: 25px;
     margin-left: 10px;
-    color: #38023B;
-    font-family: 'Montserrat-Bold';
+    color: #FFF;
+    font-family: 'Montserrat-Regular';
     cursor: pointer;
     transition: 0.5s all;
-    border-radius: 5px;
+    border-radius: 2px;
 }
 .header-container .container span div:hover{
-    background-color: #38023B;
-    color: #CCFFCB;
+    background-color: #FFF;
+    color: #404448;
 }
 .header-container .container h3{
     color: #CEFDFF;

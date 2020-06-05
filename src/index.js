@@ -64,10 +64,15 @@ class App extends React.Component{
     }
 
     showUser = (x) => {
-        this.setState({
-            openUser : true,
-            currentUser: x
+        fetch(x.url)
+        .then((res) => res.json() )
+        .then((data) => {
+            this.setState({
+                openUser : true,
+                currentUser: data
+            })
         })
+
     }
     render(){
         return(

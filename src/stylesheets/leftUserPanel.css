@@ -1,0 +1,44 @@
+.leftUserPanel{
+    width: 20%;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+}
+.leftUserPanel figure{
+    border: 1px solid #e1e4e8;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+.leftUserPanel h1{
+    color: #000;
+    font-family: 'Montserrat-Regular';
+    font-size: 25px;
+    font-weight: 300;
+}
+.leftUserPanel h2{
+    color: #666;
+    font-family: 'Montserrat-Light';
+    font-size: 20px;
+    font-weight: 200;
+    margin-bottom: 25px;
+}
+.leftUserPanel .statusContainer p{
+    /* font-family: 'Montserrat-Light'; */
+    font-family: 'OpenSans';
+    font-size: 14px;
+    color: #000;
+    word-wrap: break-word;
+    text-align: left;
+}
+.leftUserPanel .organisation{
+    font-family: 'OpenSans';
+    font-size: 14px;
+}
+.leftUserPanel .location{
+    font-family: 'OpenSans';
+    font-size: 14px;
+}
+.leftUserPanel .blog{
+    font-family: 'OpenSans';
+    font-size: 14px;
+}
