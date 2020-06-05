@@ -1,0 +1,63 @@
+.loader-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}  
+  .spinner {
+    position: absolute;
+    top: calc(50% - 12.5px);
+    left: calc(50% - 12.5px);
+  
+    width: 75px;
+    height: 75px;
+    border-top: 8px solid aliceblue;
+    border-right: 8px solid aliceblue;
+    border-bottom: 8px solid aliceblue;
+    border-left: 8px solid #8c618d;
+    border-radius: 50%;
+  
+    animation-name: spin;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+  }
+  
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+      border-left:8px solid #24292E;
+    }
+    
+    25%{
+      transform: rotate(360deg);
+      border-left:8px solid gold;
+    }
+    
+    50%{
+      transform:rotate(720deg);
+      border-left:8px solid #24292E;
+    }
+    
+    75%{
+      transform: rotate(1080deg);
+      border-left:8px solid gold;
+    }
+  
+    100% {
+      transform: rotate(1440deg);
+      border-left:8px solid #24292E;
+    }
+  
+  }
+  
+  .logo {
+    position:absolute;
+    top:calc(50% + 35px);
+    left:calc(50% - 20px);
+    
+    font-family:sans-serif;
+    color:gray;
+    letter-spacing:0.1em;
+  }
+  

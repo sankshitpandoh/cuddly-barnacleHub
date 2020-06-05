@@ -8,6 +8,7 @@ import Welcome from './components/Welcome';
 import LeftPanel from './components/leftPanel';
 import DisplayPannel from './components/displayPannel';
 import UserProfile from './components/userProfile';
+import Loader from './components/loader';
 
 const API = "https://api.github.com/";
 const searchQueries = ["search/users?q=" , "search/repositories?q="]
@@ -78,12 +79,19 @@ class App extends React.Component{
     }
 
     showUser = (x) => {
+        this.setState({
+            loading: true
+        })
         fetch(x.url)
         .then((res) => res.json() )
         .then((data) => {
             this.setState({
                 openUser : true,
                 currentUser: data
+            }, () => {
+                this.setState({
+                    loading: false
+                })
             })
         })
 
@@ -103,11 +111,11 @@ class App extends React.Component{
                     <DisplayPannel data = {this.state.data} showUser = {this.showUser} />
                     </>
                     :
-                    <div>Loading</div>
+                    <Loader />
                     }
                 </div>
                 :
-                <UserProfile data={this.state.currentUser} />
+                <UserProfile data={this.state.currentUser} loading = {this.state.loading} />
                 }
 
             </>
