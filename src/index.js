@@ -21,7 +21,8 @@ class App extends React.Component{
         data : "",
         activeOption : 0,
         openUser : false,
-        currentUser : ""
+        currentUser : "",
+        loading: false
     }
 
     backHome = () =>{
@@ -51,22 +52,26 @@ class App extends React.Component{
             openUser : false,
             currentUser : "",
             activeOption : 0,
-            onHome: false
+            onHome: false,
+            loading: true
         }, () => { this.fetchSearch()})
     }
 
     fetchSearch = () => {
         this.setState({
-            searchParameter : this.state.searchParameter + this.state.searchInput
+            searchParameter : this.state.searchParameter + this.state.searchInput,
         }, () => {
             let url = API + this.state.searchParameter;
             console.log(url)
             fetch(url)
             .then((res) => res.json() )
             .then((data) => {
-                console.log(data)
                 this.setState({
                     data : data,
+                },() => {
+                    this.setState({
+                        loading: false
+                    })
                 })
             })
         })
@@ -92,14 +97,18 @@ class App extends React.Component{
                 :
                 !this.state.openUser ?
                 <div className = "content-container">
+                {!this.state.loading ?
+                    <>
                     <LeftPanel active = {this.state.activeOption} handleCategory = {this.handleCategory}/>
-                        {this.state.data !== "" &&
-                            <DisplayPannel data = {this.state.data} showUser = {this.showUser} />
-            }
-            </div>
-            :
-            <UserProfile data={this.state.currentUser} />
-            }
+                    <DisplayPannel data = {this.state.data} showUser = {this.showUser} />
+                    </>
+                    :
+                    <div>Loading</div>
+                    }
+                </div>
+                :
+                <UserProfile data={this.state.currentUser} />
+                }
 
             </>
         )

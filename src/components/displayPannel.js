@@ -3,6 +3,11 @@ import '../stylesheets/displayPannel.css';
 
 class DisplayPannel extends React.Component{
     /* Read how to add pagination as items length != total_count */
+
+    componentWillUnmount() {
+        document.querySelector(".displayPannel").remove()
+    }
+
     render(){
         const resultItems = this.props.data.items.map((x,index) => {
         return <div
