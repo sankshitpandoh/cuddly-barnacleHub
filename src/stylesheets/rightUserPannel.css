@@ -1,0 +1,6 @@
+.right-user-pannel-container{
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    padding-left: 25px;
+}

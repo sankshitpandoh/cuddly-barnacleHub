@@ -12,9 +12,7 @@ return(
         <button><a href={props.data.html_url}>View on Github</a></button>
         <div className="statusContainer">
             <p>
-                {props.data.bio === null?
-                    ""
-                    :
+                {props.data.bio !== null&&
                     props.data.bio}
             </p>
         </div>

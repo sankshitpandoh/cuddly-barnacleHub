@@ -1,7 +1,8 @@
 import React from 'react';
 import '../stylesheets/userProfile.css';
-import LeftUserPanel from './leftUserPanel';
 import Loader from './loader';
+import LeftUserPanel from './leftUserPanel';
+import RightUserPanel from './rightUserPanel';
 
 class UserProfile extends React.Component{
     render(){
@@ -10,6 +11,7 @@ class UserProfile extends React.Component{
             {!this.props.loading ? 
                 <div className="container">
                     <LeftUserPanel data = {this.props.data} />
+                    <RightUserPanel data = {this.props.data} />
                 </div>
                 :
                 <Loader />

@@ -1,0 +1,31 @@
+.top-nav-container{
+    display: flex;
+    width: 100% ;
+    border-bottom: 1px solid #d1d5da;
+    /* margin-left: 20px; */
+}
+.top-nav-container .single-top-nav-item{
+    display: flex;
+    margin-right: 40px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #fff ;
+    transition: 0.25s all;
+    align-items: center;
+    cursor: pointer;
+    font-size: 15px;
+    font-family: 'Montserrat-Light';
+
+}
+.top-nav-container .single-top-nav-item:hover{
+    border-bottom: 2px solid #d1d5da ;
+}
+.top-nav-container .single-top-nav-item span{
+    margin-left: 10px ;
+    font-size: 10px;
+    background-color: rgba(27,31,35,.08) ;
+    color: #586069;
+    padding: 2px 5px;
+    border-radius: 20px;
+    font-family: 'Montserrat-Regular';
+    font-weight: 600;
+}
