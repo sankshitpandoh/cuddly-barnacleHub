@@ -23,7 +23,8 @@ class App extends React.Component{
         activeOption : 0,
         openUser : false,
         currentUser : "",
-        loading: false
+        loading: false,
+        currentPage : 1
     }
 
     backHome = () =>{
@@ -80,6 +81,23 @@ class App extends React.Component{
         })
     }
 
+    /* fix get more data */
+    getMoreData = (x) => {
+        console.log("here")
+        this.setState({
+            searchParameter : this.state.searchParameter + this.state.searchInput + "&page=" + x
+        }, () => {
+            let url = API + this.state.searchParameter;
+            fetch(url)
+            .then((res) => res.json() )
+            .then((data) => {
+                this.setState({
+                    data : [this.state.data, data] /* fix here */
+                })
+            })
+        })
+    }
+
     showUser = (x) => {
         this.setState({
             loading: true
@@ -111,7 +129,7 @@ class App extends React.Component{
                     <>
                     <LeftPanel active = {this.state.activeOption} handleCategory = {this.handleCategory}/>
                     {!this.state.loading ?
-                        <DisplayPannel data = {this.state.data} showUser = {this.showUser} />
+                        <DisplayPannel data = {this.state.data} showUser = {this.showUser} getMoreData= {this.getMoreData} />
                         :
                         <Loader />
                     }

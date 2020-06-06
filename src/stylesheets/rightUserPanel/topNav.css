@@ -8,16 +8,23 @@
     display: flex;
     margin-right: 40px;
     padding-bottom: 15px;
+    padding: 0 10px 15px 10px;
     border-bottom: 2px solid #fff ;
     transition: 0.25s all;
     align-items: center;
+    color: #586069;
     cursor: pointer;
     font-size: 15px;
     font-family: 'Montserrat-Light';
-
+}
+.top-nav-container .active-option{
+    border-bottom-color: #e36209 !important ;
+    font-weight: 900;
+    color: #000 !important;
 }
 .top-nav-container .single-top-nav-item:hover{
     border-bottom: 2px solid #d1d5da ;
+    color: #24292e;
 }
 .top-nav-container .single-top-nav-item span{
     margin-left: 10px ;
