@@ -18,4 +18,4 @@ function LeftPanel(props){
         </>
     )
 }
-export default LeftPanel
+export default LeftPanel;

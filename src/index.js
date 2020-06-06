@@ -11,7 +11,7 @@ import UserProfile from './components/userProfile';
 import Loader from './components/loader';
 
 const API = "https://api.github.com/";
-const searchQueries = ["search/users?q=" , "search/repositories?q="]
+const searchQueries = ["search/users?q=" , "search/repositories?q="];
 
 class App extends React.Component{
     state = {
@@ -47,6 +47,7 @@ class App extends React.Component{
     }
 
     search = () => {
+        this.state.searchInput.trim() !== "" &&
         this.setState({
             value : this.state.searchInput,
             searchParameter : searchQueries[0],
@@ -55,12 +56,13 @@ class App extends React.Component{
             activeOption : 0,
             onHome: false,
             loading: true
-        }, () => { this.fetchSearch()})
+        }, () => {this.fetchSearch()})
     }
 
     fetchSearch = () => {
         this.setState({
             searchParameter : this.state.searchParameter + this.state.searchInput,
+            loading: true
         }, () => {
             let url = API + this.state.searchParameter;
             console.log(url)
@@ -108,7 +110,11 @@ class App extends React.Component{
                 {!this.state.loading ?
                     <>
                     <LeftPanel active = {this.state.activeOption} handleCategory = {this.handleCategory}/>
-                    <DisplayPannel data = {this.state.data} showUser = {this.showUser} />
+                    {!this.state.loading ?
+                        <DisplayPannel data = {this.state.data} showUser = {this.showUser} />
+                        :
+                        <Loader />
+                    }
                     </>
                     :
                     <Loader />
