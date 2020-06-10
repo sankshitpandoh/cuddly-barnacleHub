@@ -5,7 +5,7 @@ class DisplayPannel extends React.Component{
     /* Read how to add pagination as items length != total_count or add request on scroll
     also handle if no results found*/
     state ={
-        currentPage : this.props.currentPage
+        currentPage : 1
     }
 
     handleScroll = (e) =>{
@@ -36,7 +36,7 @@ class DisplayPannel extends React.Component{
             }   
         );
         return(
-            <div className="displayPannel" onScroll = {this.handleScroll}>
+            <div className="displayPannel">
                 <div className="container" >
                     {resultItems}
                 </div>

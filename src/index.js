@@ -83,7 +83,7 @@ class App extends React.Component{
 
     /* fix get more data */
     getMoreData = (x) => {
-        console.log("here")
+        console.log(x)
         this.setState({
             searchParameter : this.state.searchParameter + this.state.searchInput + "&page=" + x
         }, () => {
@@ -92,7 +92,7 @@ class App extends React.Component{
             .then((res) => res.json() )
             .then((data) => {
                 this.setState({
-                    data : [this.state.data, data] /* fix here */
+                    data : [this.state.data.concat(data)] /* fix here */
                 })
             })
         })
