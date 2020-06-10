@@ -1,0 +1,25 @@
+.single-repo-item{
+    padding: 20px 0;
+    border-bottom: 1px solid #e1e4e8 !important;
+}
+.single-repo-item h3{
+    font-family: 'Montserrat-Regular';
+    font-size: 23px;
+    margin-bottom: 10px;
+    color: #0366d6;
+    cursor: pointer;
+    font-weight: 300;
+}
+.single-repo-item h3:hover{
+    text-decoration: underline;
+}
+.single-repo-item p{
+    font-size: 14px;
+    font-family: 'Montserrat-Light';
+    color: #6a737d;
+}
+.single-repo-item .other-details span{
+    font-size: 12px;
+    font-family: "OpenSans";
+    font-weight: 300;
+}

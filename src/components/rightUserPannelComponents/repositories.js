@@ -1,4 +1,5 @@
 import React from 'react';
+import '../../stylesheets/rightUserPanel/repositories.css';
 import Loader from '../loader';
 
 let resultItems 
@@ -35,6 +36,12 @@ class Repositories extends React.Component{
                         <h3>
                             {x.name}
                         </h3>
+                        <p>
+                            {x.description}
+                        </p>
+                        <div className="other-details">
+                            <span>Updated on {x.updated_at}</span>
+                        </div>
                     </div>
                 }   
             );
