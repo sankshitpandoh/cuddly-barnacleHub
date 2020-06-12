@@ -29,8 +29,9 @@ class Followers extends React.Component{
     }
 
     loadContent = () => {
-        resultItems = this.state.data.map((x,index) => {
-            return <div
+        this.state.data.length !== 0 ?
+            resultItems = this.state.data.map((x,index) => {
+                return <div
                     className = "single-follower-item"
                     key={index}>
                         <img src={x.avatar_url} alt="avatar"/>
@@ -38,8 +39,10 @@ class Followers extends React.Component{
                             {x.login}
                         </h3>
                     </div>
-                }   
-            );
+                }
+            )
+            :
+            resultItems = this.props.data.login + " doesn't follow anyone "
     }
     render(){
         return(
