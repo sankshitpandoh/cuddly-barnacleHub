@@ -1,0 +1,23 @@
+.single-follower-item{
+    padding: 20px 0;
+    border-bottom: 1px solid #e1e4e8 !important;
+    display: flex;
+    align-items: center;
+}
+.single-follower-item img{
+    width: 75px;
+    height: 75px;
+    font-size: 12px;
+    font-family: 'OpenSans';
+}
+.single-follower-item h3{
+    font-family: 'Montserrat-Light';
+    font-size: 16px;
+    margin-left: 20px;
+    cursor: pointer;
+    color: #24292e;
+    transition: 0.2s all;
+}
+.single-follower-item h3:hover{
+    color: #0366d6;
+}

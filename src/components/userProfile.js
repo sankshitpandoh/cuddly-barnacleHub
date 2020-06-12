@@ -11,7 +11,7 @@ class UserProfile extends React.Component{
             {!this.props.loading ? 
                 <div className="container">
                     <LeftUserPanel data = {this.props.data} />
-                    <RightUserPanel data = {this.props.data} />
+                    <RightUserPanel data = {this.props.data} openUser={this.props.openUser} />
                 </div>
                 :
                 <Loader />

@@ -139,7 +139,7 @@ class App extends React.Component{
                     }
                 </div>
                 :
-                <UserProfile data={this.state.currentUser} loading = {this.state.loading} />
+                <UserProfile data={this.state.currentUser} loading = {this.state.loading} openUser={this.showUser} />
                 }
 
             </>
