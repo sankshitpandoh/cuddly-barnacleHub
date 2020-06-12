@@ -21,3 +21,11 @@
 .single-follower-item h3:hover{
     color: #0366d6;
 }
+.empty{
+    font-family: 'Montserrat-Bold';
+    font-weight: 300;
+    font-size: 22px;
+    text-align: center;
+    margin-top: 25px;
+
+}

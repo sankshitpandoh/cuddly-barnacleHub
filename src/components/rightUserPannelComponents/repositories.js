@@ -52,7 +52,7 @@ class Repositories extends React.Component{
                 {this.state.loading ?
                     <Loader></Loader>
                     :
-                    <h1>{resultItems}</h1>
+                    <div>{resultItems}</div>
 
                 }
             </>

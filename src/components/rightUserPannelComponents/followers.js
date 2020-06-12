@@ -35,14 +35,14 @@ class Followers extends React.Component{
                     className = "single-follower-item"
                     key={index}>
                         <img src={x.avatar_url} alt="avatar"/>
-                        <h3 onClick={() => this.props.openUser(x)}>
+                        <h3 onClick={() => this.props.openUser(x)} >
                             {x.login}
                         </h3>
                     </div>
                 }
             )
             :
-            resultItems = this.props.data.login + " doesn't follow anyone "
+            resultItems = <p className="empty"> {this.props.data.login}  has zero followers  </p>
     }
     render(){
         return(
@@ -50,8 +50,7 @@ class Followers extends React.Component{
                 {this.state.loading ?
                     <Loader></Loader>
                     :
-                    <h1>{resultItems}</h1>
-
+                    <div>{resultItems}</div>
                 }
             </>
         )

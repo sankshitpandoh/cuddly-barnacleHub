@@ -45,7 +45,7 @@ class Following extends React.Component{
                 }
             )
             :
-            resultItems = this.props.data.login + " doesn't follow anyone "
+            resultItems = <p className="empty"> {this.props.data.login}  doesn't follow anyone  </p>
     }
     render(){
         return(
@@ -53,7 +53,7 @@ class Following extends React.Component{
                 {this.state.loading ?
                     <Loader></Loader>
                     :
-                    <h1>{resultItems}</h1>
+                    <div>{resultItems}</div>
 
                 }
             </>
