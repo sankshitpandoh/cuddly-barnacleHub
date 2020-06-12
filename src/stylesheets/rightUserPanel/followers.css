@@ -3,6 +3,7 @@
     border-bottom: 1px solid #e1e4e8 !important;
     display: flex;
     align-items: center;
+    position: relative;
 }
 .single-follower-item img{
     width: 75px;
@@ -21,11 +22,16 @@
 .single-follower-item h3:hover{
     color: #0366d6;
 }
+.single-follower-item  .user-details{
+    background-color: red;
+    position: absolute;
+    width: 100px;
+    height: 100px;
+}
 .empty{
     font-family: 'Montserrat-Bold';
     font-weight: 300;
     font-size: 22px;
     text-align: center;
     margin-top: 25px;
-
 }

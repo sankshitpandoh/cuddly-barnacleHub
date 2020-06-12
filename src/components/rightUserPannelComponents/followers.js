@@ -7,7 +7,9 @@ class Followers extends React.Component{
     state={
         page: 1,
         data: "",
-        loading: false
+        loading: false,
+        showUserDetails : false,
+        userDetails : "",
     }
 
     componentDidMount(){
@@ -28,6 +30,20 @@ class Followers extends React.Component{
         })
     }
 
+    showUserDetails = (x) => {
+        fetch(x.url)
+        .then((res) => res.json() )
+        .then((data) => {
+            this.setState({
+                userDetails: data
+            }, () => {
+                this.setState({
+                    showUserDetails : true
+                })
+            })
+        })
+    }
+
     loadContent = () => {
         this.state.data.length !== 0 ?
             resultItems = this.state.data.map((x,index) => {
@@ -35,7 +51,16 @@ class Followers extends React.Component{
                     className = "single-follower-item"
                     key={index}>
                         <img src={x.avatar_url} alt="avatar"/>
-                        <h3 onClick={() => this.props.openUser(x)} >
+                        {this.state.showUserDetails &&
+                            <div className="user-details">
+                            <div className="details-container">
+                                <img src={this.state.userDetails.avatar_url} alt= "avatar" />
+                                {this.state.userDetails.name}
+                            </div>
+                            <div className="details-bottom-container"></div>
+                        </div>
+                        }
+                        <h3 onClick={() => this.props.openUser(x)} onMouseEnter={() => this.showUserDetails(x)} >
                             {x.login}
                         </h3>
                     </div>
