@@ -9,6 +9,7 @@ class Followers extends React.Component{
         data: "",
         loading: false,
         showUserDetails : false,
+        userDetailsIndex : "",
         userDetails : "",
     }
 
@@ -30,7 +31,13 @@ class Followers extends React.Component{
         })
     }
 
-    showUserDetails = (x) => {
+    componentDidUpdate(prevState, prevProps){
+        console.log("here")
+        prevState.showUserDetails !== this.state.showUserDetails &&
+            this.loadContent()
+    }
+
+    showUserDetails = (x, y) => {
         fetch(x.url)
         .then((res) => res.json() )
         .then((data) => {
@@ -38,11 +45,20 @@ class Followers extends React.Component{
                 userDetails: data
             }, () => {
                 this.setState({
-                    showUserDetails : true
+                    showUserDetails : true,
+                    userDetailsIndex: y
                 })
             })
         })
     }
+    hideDetails = () => {
+        this.setState({
+            showUserDetails: false,
+            userDetailsIndex: ""
+        })
+    }
+    /* To do :
+    fix user detials */
 
     loadContent = () => {
         this.state.data.length !== 0 ?
@@ -52,15 +68,18 @@ class Followers extends React.Component{
                     key={index}>
                         <img src={x.avatar_url} alt="avatar"/>
                         {this.state.showUserDetails &&
+                            this.state.userDetailsIndex === index &&
                             <div className="user-details">
-                            <div className="details-container">
-                                <img src={this.state.userDetails.avatar_url} alt= "avatar" />
-                                {this.state.userDetails.name}
-                            </div>
-                            <div className="details-bottom-container"></div>
+                                <div className="details-container">
+                                    <img src={this.state.userDetails.avatar_url} alt= "avatar" />
+                                    {this.state.userDetails.name}
+                                </div>
+                                <div className="details-bottom-container">
+
+                                </div>
                         </div>
                         }
-                        <h3 onClick={() => this.props.openUser(x)} onMouseEnter={() => this.showUserDetails(x)} >
+                        <h3 onClick={() => this.props.openUser(x)} onMouseEnter={() => this.showUserDetails(x, index)} onMouseLeave= {this.hideDetails} >
                             {x.login}
                         </h3>
                     </div>
