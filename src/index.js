@@ -129,7 +129,7 @@ class App extends React.Component{
                     <>
                     <LeftPanel active = {this.state.activeOption} handleCategory = {this.handleCategory}/>
                     {!this.state.loading ?
-                        <DisplayPannel data = {this.state.data} showUser = {this.showUser} getMoreData= {this.getMoreData} />
+                        <DisplayPannel data = {this.state.data} activeOption={this.state.activeOption} showUser = {this.showUser} getMoreData= {this.getMoreData} />
                         :
                         <Loader />
                     }

@@ -31,8 +31,8 @@ class Followers extends React.Component{
         })
     }
 
-    componentDidUpdate(prevState, prevProps){
-        console.log("here")
+    componentDidUpdate(prevProps, prevState){
+        // console.log(prevState.showUserDetails)
         prevState.showUserDetails !== this.state.showUserDetails &&
             this.loadContent()
     }
@@ -47,10 +47,11 @@ class Followers extends React.Component{
                 this.setState({
                     showUserDetails : true,
                     userDetailsIndex: y
-                })
+                }, () => {console.log("state updated")})
             })
         })
     }
+    
     hideDetails = () => {
         this.setState({
             showUserDetails: false,
@@ -67,8 +68,8 @@ class Followers extends React.Component{
                     className = "single-follower-item"
                     key={index}>
                         <img src={x.avatar_url} alt="avatar"/>
-                        {this.state.showUserDetails &&
-                            this.state.userDetailsIndex === index &&
+                        { this.state.userDetailsIndex === index  &&
+                           this.state.showUserDetails &&
                             <div className="user-details">
                                 <div className="details-container">
                                     <img src={this.state.userDetails.avatar_url} alt= "avatar" />

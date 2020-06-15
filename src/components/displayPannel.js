@@ -1,5 +1,8 @@
 import React from 'react';
 import '../stylesheets/displayPannel.css';
+import SingleRepositoryListItem from './single-repo-list-item'
+
+let resultItems
 
 class DisplayPannel extends React.Component{
     /* Read how to add pagination as items length != total_count or add request on scroll
@@ -8,21 +11,22 @@ class DisplayPannel extends React.Component{
         currentPage : 1
     }
 
-    handleScroll = (e) =>{
-        console.log("i am here")
-        let element = e.target;
-        let flagHeight = element.scrollHeight * 80 / 100
-        if(element.scrollTop >=  flagHeight){
-            this.setState({
-                currentPage: this.state.currentPage + 1
-            }, () => {
-                this.props.getMoreData(this.state.currentPage)
-            })
-        }
-    }
+    // handleScroll = (e) =>{
+    //     console.log("i am here")
+    //     let element = e.target;
+    //     let flagHeight = element.scrollHeight * 80 / 100
+    //     if(element.scrollTop >=  flagHeight){
+    //         this.setState({
+    //             currentPage: this.state.currentPage + 1
+    //         }, () => {
+    //             this.props.getMoreData(this.state.currentPage)
+    //         })
+    //     }
+    // }
 
     render(){
-        const resultItems = this.props.data.items.map((x,index) => {
+        this.props.activeOption === 0 ?
+        resultItems = this.props.data.items.map((x,index) => {
         return <div
                 className = "single-result-item"
                 key={index}>
@@ -34,7 +38,12 @@ class DisplayPannel extends React.Component{
                     </h3>
                 </div>
             }   
-        );
+        )
+        :
+        resultItems = this.props.data.items.map((x,index) => {
+            return <SingleRepositoryListItem index={index} showUser={this.props.showUser} details={x} />
+                }   
+            )
         return(
             <div className="displayPannel">
                 <div className="container" >
