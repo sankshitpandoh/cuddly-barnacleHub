@@ -1,0 +1,28 @@
+.single-result-item{
+    /* background-color: red; */
+    margin: 10px;
+    padding: 10px 5px;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    border-bottom: 1px solid #e1e4e8;
+}
+.single-result-item figure{
+    height: 50px;
+    width: 50px;
+    margin-right: 15px;
+}
+.single-result-item h3{
+    cursor: pointer;
+    /* font-family: 'Montserrat-Regular'; */
+    font-family: 'Montserrat-Light';
+    font-size: 16px;
+    margin-left: 20px;
+    cursor: pointer;
+    color: #24292e;
+    transition: 0.2s all;
+}
+.single-result-item h3:hover{
+    color: #0366d6;
+    text-decoration: underline;
+}

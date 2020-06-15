@@ -1,6 +1,8 @@
 import React from 'react';
 import '../../stylesheets/rightUserPanel/followers.css';
 import Loader from '../loader';
+import SingleUserListItem from '../single-user-list-item';
+
 
 let resultItems; 
 class Following extends React.Component{
@@ -34,14 +36,7 @@ class Following extends React.Component{
     loadContent = () => {
         this.state.data.length !== 0 ?
             resultItems = this.state.data.map((x,index) => {
-                return <div
-                    className = "single-follower-item"
-                    key={index}>
-                        <img src={x.avatar_url} alt="avatar"/>
-                        <h3 onClick={() => this.props.openUser(x)}>
-                            {x.login}
-                        </h3>
-                    </div>
+                return <SingleUserListItem key={index} showUser={this.props.openUser} details={x} />
                 }
             )
             :

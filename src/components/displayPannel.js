@@ -28,12 +28,12 @@ class DisplayPannel extends React.Component{
     render(){
         this.props.activeOption === 0 ?
         resultItems = this.props.data.items.map((x,index) => {
-        return <SingleUserListItem index={index} showUser = {this.props.showUser} details={x} />
+        return <SingleUserListItem key={index} showUser = {this.props.showUser} details={x} />
             }   
         )
         :
         resultItems = this.props.data.items.map((x,index) => {
-            return <SingleRepositoryListItem index={index} showUser={this.props.showUser} details={x} />
+            return <SingleRepositoryListItem key={index} showUser={this.props.showUser} details={x} />
                 }   
             )
         return(

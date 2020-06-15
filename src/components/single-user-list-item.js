@@ -5,8 +5,7 @@ class SingleUserListItem extends React.Component{
     render(){
         return(
             <div
-                className = "single-result-item"
-                key={this.props.index}>
+                className = "single-result-item">
                     <figure>
                         <img src={this.props.details.avatar_url} alt ="display-avatar" />
                     </figure>
