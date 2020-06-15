@@ -30,6 +30,27 @@ class Following extends React.Component{
             })
         })
     }
+    showUserDetails = (x, y) => {
+        fetch(x.url)
+        .then((res) => res.json() )
+        .then((data) => {
+            this.setState({
+                userDetails: data
+            }, () => {
+                this.setState({
+                    showUserDetails : true,
+                    userDetailsIndex: y
+                }, () => {console.log("state updated")})
+            })
+        })
+    }
+    
+    hideDetails = () => {
+        this.setState({
+            showUserDetails: false,
+            userDetailsIndex: ""
+        })
+    }
 
     render(){
         this.state.data.length !== 0 ?

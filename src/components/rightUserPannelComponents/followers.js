@@ -32,11 +32,6 @@ class Followers extends React.Component{
         })
     }
 
-    // componentDidUpdate(prevProps, prevState){
-    //     // console.log(prevState.showUserDetails)
-    //     prevState.showUserDetails !== this.state.showUserDetails &&
-    //         this.loadContent()
-    // }
 
     showUserDetails = (x, y) => {
         fetch(x.url)
