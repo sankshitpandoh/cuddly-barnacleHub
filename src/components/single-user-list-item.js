@@ -9,7 +9,7 @@ class SingleUserListItem extends React.Component{
                     <figure>
                         <img src={this.props.details.avatar_url} alt ="display-avatar" />
                     </figure>
-                    <h3 onClick={() => this.props.showUser(this.props.details)}>
+                    <h3 onClick={() => this.props.showUser(this.props.details)} onMouseEnter={this.props.onMouseEnter} onMouseLeave={this.props.onMouseLeave}>
                         {this.props.details.login}
                     </h3>
             </div>
