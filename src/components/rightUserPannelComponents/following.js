@@ -34,7 +34,29 @@ class Following extends React.Component{
     render(){
         this.state.data.length !== 0 ?
         resultItems = this.state.data.map((x,index) => {
-            return <SingleUserListItem key={index} showUser={this.props.openUser} details={x} />
+            return <div className="single-follow-container" key={index}> 
+                    { this.state.userDetailsIndex === index  &&
+                       this.state.showUserDetails &&
+                        <div className="user-details">
+                            <div className="details-container">
+                                <img src={this.state.userDetails.avatar_url} alt= "avatar" />
+                                <div>
+                                    <h3> {this.state.userDetails.name} <span> @{this.state.userDetails.login} </span> </h3>
+                                    <p> {this.state.userDetails.bio} </p>
+                                </div>
+                            </div>
+                            <div className="details-bottom-container">
+                                {this.state.userDetails.location !== null &&
+                                    <p> {this.state.userDetails.location} </p>
+                                }
+                                {this.state.userDetails.company !== null &&
+                                    <p> {this.state.userDetails.company} </p>
+                                }
+                            </div>
+                    </div>
+                    }
+                        <SingleUserListItem showUser={this.props.openUser} details={x} onMouseEnter={() => this.showUserDetails(x, index)} onMouseLeave= {this.hideDetails} />
+                   </div>
             }
         )
         :
