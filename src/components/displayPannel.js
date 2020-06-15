@@ -1,6 +1,7 @@
 import React from 'react';
 import '../stylesheets/displayPannel.css';
-import SingleRepositoryListItem from './single-repo-list-item'
+import SingleRepositoryListItem from './single-repo-list-item';
+import SingleUserListItem from './single-user-list-item';
 
 let resultItems
 
@@ -27,16 +28,7 @@ class DisplayPannel extends React.Component{
     render(){
         this.props.activeOption === 0 ?
         resultItems = this.props.data.items.map((x,index) => {
-        return <div
-                className = "single-result-item"
-                key={index}>
-                    <figure>
-                        <img src={x.avatar_url} alt ="display-avatar" />
-                    </figure>
-                    <h3 onClick={() => this.props.showUser(x)}>
-                        {x.login}
-                    </h3>
-                </div>
+        return <SingleUserListItem index={index} showUser = {this.props.showUser} details={x} />
             }   
         )
         :
