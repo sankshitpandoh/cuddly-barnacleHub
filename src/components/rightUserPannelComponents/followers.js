@@ -24,7 +24,7 @@ class Followers extends React.Component{
             this.setState({
                 data: data
             }, () => {
-                this.loadContent()
+                // this.loadContent()
                 this.setState({
                     loading: false
                 })
@@ -63,36 +63,37 @@ class Followers extends React.Component{
     fix user detials */
 
     loadContent = () => {
-        this.state.data.length !== 0 ?
-            resultItems = this.state.data.map((x,index) => {
-                return <SingleUserListItem key={index} showUser={this.props.openUser} details={x} />
 
-                // <div
-                //     className = "single-follower-item"
-                //     key={index}>
-                //         <img src={x.avatar_url} alt="avatar"/>
-                //         { this.state.userDetailsIndex === index  &&
-                //            this.state.showUserDetails &&
-                //             <div className="user-details">
-                //                 <div className="details-container">
-                //                     <img src={this.state.userDetails.avatar_url} alt= "avatar" />
-                //                     {this.state.userDetails.name}
-                //                 </div>
-                //                 <div className="details-bottom-container">
-
-                //                 </div>
-                //         </div>
-                //         }
-                //         <h3 onClick={() => this.props.openUser(x)} onMouseEnter={() => this.showUserDetails(x, index)} onMouseLeave= {this.hideDetails} >
-                //             {x.login}
-                //         </h3>
-                //     </div>
-                }
-            )
-            :
-            resultItems = <p className="empty"> {this.props.data.login}  has zero followers  </p>
     }
     render(){
+        this.state.data.length !== 0 ?
+        resultItems = this.state.data.map((x,index) => {
+            return <SingleUserListItem key={index} showUser={this.props.openUser} details={x} />
+
+            // <div
+            //     className = "single-follower-item"
+            //     key={index}>
+            //         <img src={x.avatar_url} alt="avatar"/>
+            //         { this.state.userDetailsIndex === index  &&
+            //            this.state.showUserDetails &&
+            //             <div className="user-details">
+            //                 <div className="details-container">
+            //                     <img src={this.state.userDetails.avatar_url} alt= "avatar" />
+            //                     {this.state.userDetails.name}
+            //                 </div>
+            //                 <div className="details-bottom-container">
+
+            //                 </div>
+            //         </div>
+            //         }
+            //         <h3 onClick={() => this.props.openUser(x)} onMouseEnter={() => this.showUserDetails(x, index)} onMouseLeave= {this.hideDetails} >
+            //             {x.login}
+            //         </h3>
+            //     </div>
+            }
+        )
+        :
+        resultItems = <p className="empty"> {this.props.data.login}  has zero followers  </p>
         return(
             <>
                 {this.state.loading ?

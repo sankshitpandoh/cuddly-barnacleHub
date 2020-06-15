@@ -18,14 +18,12 @@ class Following extends React.Component{
         })
         let string = this.props.data.following_url
         string = string.replace('{/other_user}', '');
-        // console.log(string)
         fetch(string)
         .then((res) => res.json() )
         .then((data) => {
             this.setState({
                 data: data
             }, () => {
-                this.loadContent()
                 this.setState({
                     loading: false
                 })
@@ -33,16 +31,14 @@ class Following extends React.Component{
         })
     }
 
-    loadContent = () => {
-        this.state.data.length !== 0 ?
-            resultItems = this.state.data.map((x,index) => {
-                return <SingleUserListItem key={index} showUser={this.props.openUser} details={x} />
-                }
-            )
-            :
-            resultItems = <p className="empty"> {this.props.data.login}  doesn't follow anyone  </p>
-    }
     render(){
+        this.state.data.length !== 0 ?
+        resultItems = this.state.data.map((x,index) => {
+            return <SingleUserListItem key={index} showUser={this.props.openUser} details={x} />
+            }
+        )
+        :
+        resultItems = <p className="empty"> {this.props.data.login}  doesn't follow anyone  </p>
         return(
             <>
                 {this.state.loading ?
