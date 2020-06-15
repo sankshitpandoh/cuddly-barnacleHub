@@ -20,6 +20,7 @@
     font-family: 'Montserrat-Light';
     color: #000;
     margin-bottom: 5px;
+    padding: 10px 0px;
 }
 .single-repo-list-item .other-details{
     display: flex;
@@ -28,4 +29,14 @@
     font-size: 12px;
     font-family: "OpenSans";
     font-weight: 300;
+    margin-right: 10px;
+    display: flex;
+    color: #586069;
+    /* align-items: center; */
 }
+.single-repo-list-item .other-details span .octicon{
+    color: #586069 !important;
+    margin-right: 5px;
+}
+/* .single-repo-list-item .other-details span svg{
+} */
